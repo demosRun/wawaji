@@ -1,0 +1,244 @@
+body, html, .page, .page-box {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.owo-animation {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.owo-animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.owo-animation-forward {
+  z-index: 99;
+}
+
+img {
+  border: none;
+}
+
+[route-active="false"] {
+  display: none;
+}
+
+/* 清除浮动 */
+.clear:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+  zoom: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.loading-box {
+  width: 100%;
+  height: 100%;
+  background-color: #dc8cac;
+}
+
+.loading-box .loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -16%;
+  bottom: 0;
+  margin: auto;
+}
+
+.loading-box .loading-bar {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  height: 20px;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 2px 3px 9px #5d739c;
+}
+
+.loading-box .num-bar {
+  background-color: #75c1d3;
+  height: 20px;
+  border-radius: 20px;
+  width: 0%;
+  transition: width 0.5s;
+}
+
+.loading-box .num,
+.loading-box .text {
+  position: absolute;
+  top: 0%;
+  bottom: -8%;
+  margin: auto;
+  line-height: 50px;
+  height: 50px;
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.loading-box .text {
+  bottom: -14%;
+}
+[o-animation="shrink"] {
+  -webkit-animation: shrink 1s linear alternate infinite;
+  animation: shrink 1s linear alternate infinite;
+}
+@-webkit-keyframes shrink{
+  0%{-webkit-transform:scale(0.9);}
+  100%{-webkit-transform:scale(1);}
+}
+@keyframes shrink{
+  0%{transform:scale(0.9);}
+  100%{transform:scale(1);}
+}
+
+
+[o-animation="floatLeftRight"] {
+  -webkit-animation: floatLeftRight 3s linear infinite;
+  animation: floatLeftRight 3s linear infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes floatLeftRight {
+  0% { transform: translateX(-5vw);}
+  50% {transform: translateX(5vw);}
+  100% {transform: translateX(-5vw);}
+}
+
+@-webkit-keyframes float {
+  0% { transform: translateX(-5vw);}
+  50% {transform: translateX(5vw);}
+  100% {transform: translateX(-5vw);}
+}
+
+@keyframes float {
+  0% { transform: translateX(-5vw);}
+  50% {transform: translateX(5vw);}
+  100% {transform: translateX(-5vw);}
+}
+
+.page-1 .so-0 {
+  left: 0px;
+  top: 0px;
+  width: 750px;
+  height: 1508px;
+  z-index: 0;
+}
+
+.page-1 .so-1 {
+  left: 465px;
+  top: 221px;
+  z-index: -1;
+}
+
+.page-1 .so-2 {
+  left: 274px;
+  top: 1176px;
+  z-index: -2;
+}
+
+.page-1 .so-3 {
+  left: 28px;
+  top: 194px;
+  z-index: -3;
+}
+
+.page-1 .so-4 {
+  left: 111px;
+  top: 190px;
+  z-index: -4;
+}
+
+.page-1 .so-5 {
+  left: 0px;
+  top: 0px;
+  z-index: -5;
+}
+
+.page-1 .so-6 {
+  left: 314px;
+  top: 520px;
+  z-index: -6;
+}
+
+.page-1 .so-7 {
+  left: 0px;
+  top: 0px;
+  z-index: -7;
+}
+
+.page-1 .shuoming {
+  position: absolute;
+  top: 511px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+}
+
+.page-1 .shalte {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.page-1 .shalte .yingbi {
+  position: absolute;
+  left: 248px;
+  top: 270px;
+}
+
+
+
+/* 页面切换动画 */
+.o-page-scaleDown {
+	-webkit-animation: scaleDown .7s ease both;
+	-moz-animation: scaleDown .7s ease both;
+	animation: scaleDown .7s ease both;
+}
+
+@-webkit-keyframes scaleDown {
+	to { opacity: 0; -webkit-transform: scale(.8); }
+}
+@-moz-keyframes scaleDown {
+	to { opacity: 0; -moz-transform: scale(.8); }
+}
+@keyframes scaleDown {
+	to { opacity: 0; transform: scale(.8); }
+}
+
+

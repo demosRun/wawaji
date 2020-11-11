@@ -1,0 +1,104 @@
+<template lang="pug">
+.page-1
+  .so.so-0
+    img.so.so-1(src="@|1144.png|")
+    img.so.so-2(src="@|1155.png|" o-animation="shrink" o-tap="showGuiZe")
+    img.so.so-3(src="@|1153.png|")
+    img.so.so-4(src="@|1148.png|")
+    img.so.so-5(src="@|1152.png|")
+    img.so.so-6(src="@|1150.png|" o-animation="floatLeftRight")
+    img.so.so-7(src="@|1157.jpg|")
+    img.shuoming(src="@|shuoming.png|")
+    .shalte
+      img.yingbi.fly(src="@|yingbi.png|")
+</template>
+
+<script>
+  module.exports = {
+    data: {
+      step: 0
+    },
+    created: function () {
+
+    },
+    showGuiZe: function () {
+      this.data.step++
+      if (this.data.step == 1) {
+        this.$el.classList.add('jieshao')
+        this.query('.so-2').src = '@|start.png|'
+      } else {
+        this.$el.classList.remove('jieshao')
+        this.$el.classList.add('toubi')
+        setTimeout(() => {
+          owo.go('page2///scaleDown/scaleUpDown/true/scaleDown/scaleUp')
+        }, 2200);
+      }
+    }
+  }
+</script>
+
+
+<style lang="less">
+.so-0 {
+  left: 0px;
+  top: 0px;
+  width: 750px;
+  height: 1508px;
+  z-index: 0;;
+}
+.so-1 {
+  left: 465px;
+  top: 221px;
+  z-index: -1;
+}
+.so-2 {
+  left: 274px;
+  top: 1176px;
+  z-index: -2;
+}
+.so-3 {
+  left: 28px;
+  top: 194px;
+  z-index: -3;
+}
+.so-4 {
+  left: 111px;
+  top: 190px;
+  z-index: -4;
+}
+.so-5 {
+  left: 0px;
+  top: 0px;
+  z-index: -5;
+}
+.so-6 {
+  left: 314px;
+  top: 520px;
+  z-index: -6;
+}
+.so-7 {
+  left: 0px;
+  top: 0px;
+  z-index: -7;
+}
+.shuoming {
+  position: absolute;
+  top: 511px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+}
+.shalte {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+  .yingbi {
+    position: absolute;
+    left: 248px;
+    top: 270px;
+  }
+}
+</style>
