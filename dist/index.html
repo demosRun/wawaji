@@ -34,7 +34,7 @@
     <!-- 页面[page1]-->
     <div class="page-1 page" template="page1" style="display: none;"><div class="so so-0"><img class="so so-1" src="./static/resource/1144.png"><img class="so so-2" src="./static/resource/1155.png" o-animation="shrink" o-tap="showGuiZe"><img class="so so-3" src="./static/resource/1153.png"><img class="so so-4" src="./static/resource/1148.png"><img class="so so-5" src="./static/resource/1152.png"><img class="so so-6" src="./static/resource/1150.png" o-animation="floatLeftRight"><img class="so so-7" src="./static/resource/1157.jpg"><img class="shuoming" src="./static/resource/shuoming.png"><div class="shalte"><img class="yingbi fly" src="./static/resource/yingbi.png"></div></div></div>
     <!-- 页面[page2]-->
-    <div class="page2 page" template="page2" style="display: none;"></div>
+    <div class="page2 page" template="page2" style="display: none;"><img class="so so-1" src="./static/resource/page2-1138-2.png" o-touchstart="startTouch" o-touchend="stopTouch"><img class="so so-2" src="./static/resource/page2-1154.png"><img class="so so-3" src="./static/resource/page2-1139.png"><div class="so so-4"><img class="so so-5" src="./static/resource/page2-282.png"><img class="so so-6" src="./static/resource/page2-1143.png"><img class="so so-7" src="./static/resource/page2-280.png"></div><img class="so so-8" src="./static/resource/page2-1153.png"><img class="so so-9" src="./static/resource/page2-278.png" o-animation="flicker" o-tap="zhuaqu"><img class="so so-10" src="./static/resource/page2-1147.png"><div class="so so-11"><img class="so so-12" src="./static/resource/page2-1145.png" o-animation="shrink"><img class="so so-13" src="./static/resource/page2-1148.png" o-animation="shrink"><img class="so so-14" src="./static/resource/page2-1149.png" o-animation="shrink"><img class="so so-15" src="./static/resource/page2-1150.png" o-animation="shrink"><img class="so so-16" src="./static/resource/page2-1151.png" o-animation="shrink"></div><img class="so so-17" src="./static/resource/page2-1152.jpg"><div class="shuzi-box"><div class="gongxi"><p>恭喜你！<br>获得“生煎娃娃”并找到了隐藏数字668</p><img class="show" src="./static/resource/page2-1145.png"><img class="next" src="./static/resource/next.png" o-animation="shrink" o-tap="showShuzi"></div><div class="panel"><img class="jixu" src="./static/resource/jixu.png" o-animation="shrink" o-tap="jixuzhua"></div></div></div>
     <!-- 页面[page3]-->
     <div class="page3 page" template="page3" style="display: none;"></div>
     <!-- 页面[page4]-->
@@ -108,11 +108,109 @@ owo.script = {
         this.$el.classList.add('toubi');
         setTimeout(function () {
           owo.go('page2///scaleDown/scaleUpDown/true/scaleDown/scaleUp');
-        }, 2200);
+        }, 1200);
       }
     }
   },
-  "page2": {},
+  "page2": {
+    "data": {
+      "touching": false,
+      "gouziLeft": 445,
+      "giftList": []
+    },
+    "startTouch": function startTouch() {
+      var x = this.$event.targetTouches[0].clientX;
+      this.data.touching = true;
+
+      if (x < 193) {
+        this.query('.so-1').src = './static/resource/page2-1138-1.png';
+        this.move(-1);
+      } else {
+        this.query('.so-1').src = './static/resource/page2-1138.png';
+        this.move(1);
+      }
+    },
+    "move": function move(step) {
+      var _this2 = this;
+
+      if (this.data.gouziLeft > 738) this.data.gouziLeft = -110;
+      if (this.data.gouziLeft < -110) this.data.gouziLeft = 738;
+      var gouzi = this.query('.so-4');
+      gouzi.style.left = (this.data.gouziLeft += step) + 'px';
+      setTimeout(function () {
+        if (_this2.data.touching) _this2.move(step);
+      }, 0);
+    },
+    "showShuzi": function showShuzi() {
+      this.query('.panel').style.display = 'block';
+      this.query('.gongxi').style.display = 'none';
+    },
+    "jixuzhua": function jixuzhua() {
+      this.query('.panel').style.display = 'none';
+      this.query('.gongxi').style.display = 'block';
+      this.query('.shuzi-box').style.display = 'none';
+    },
+    "stopTouch": function stopTouch() {
+      this.data.touching = false;
+      this.query('.so-1').src = './static/resource/page2-1138-2.png';
+      console.log(this.$event);
+    },
+    "zhuaqu": function zhuaqu() {
+      var _this3 = this;
+
+      var gouziLeft = this.data.gouziLeft;
+      this.query('.so-7').classList.add('zhuaqu');
+      setTimeout(function () {
+        _this3.query('.so-7').classList.remove('zhuaqu');
+
+        _this3.query('.shuzi-box').style.display = 'block';
+      }, 2000);
+
+      if (gouziLeft > 202 && gouziLeft < 600 && !this.data.giftList.includes('hua')) {
+        this.data.giftList.push('hua');
+        setTimeout(function () {
+          _this3.query('.so-16').classList.add('zhuazhou');
+        }, 1000);
+        return;
+      }
+
+      if (gouziLeft > 239 && gouziLeft < 431 && !this.data.giftList.includes('xiongmao')) {
+        console.log('xiongmao');
+        this.data.giftList.push('xiongmao');
+        setTimeout(function () {
+          _this3.query('.so-13').classList.add('zhuazhou');
+        }, 1000);
+        return;
+      }
+
+      if (gouziLeft > 55 && gouziLeft < 337 && !this.data.giftList.includes('fangzi')) {
+        console.log('fangzi');
+        this.data.giftList.push('fangzi');
+        setTimeout(function () {
+          _this3.query('.so-14').classList.add('zhuazhou');
+        }, 1000);
+        return;
+      }
+
+      if (gouziLeft > 564 && gouziLeft < 671 && !this.data.giftList.includes('siyecao')) {
+        console.log('siyecao');
+        this.data.giftList.push('siyecao');
+        setTimeout(function () {
+          _this3.query('.so-15').classList.add('zhuazhou');
+        }, 1000);
+        return;
+      }
+
+      if (gouziLeft > 514 && gouziLeft < 671 && !this.data.giftList.includes('bapzi')) {
+        console.log('bapzi');
+        this.data.giftList.push('bapzi');
+        setTimeout(function () {
+          _this3.query('.so-12').classList.add('zhuazhou');
+        }, 1000);
+        return;
+      }
+    }
+  },
   "page3": {},
   "page4": {}
 };

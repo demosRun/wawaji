@@ -221,7 +221,200 @@ li {
   left: 248px;
   top: 270px;
 }
+@-webkit-keyframes flicker {
+  from {
+    opacity: 100%;
+  }
 
+  to {
+    opacity: 20%;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 20%;
+  }
+}
+
+[o-animation="flicker"] {
+  -webkit-animation: flicker 2s linear 0s infinite alternate;
+  animation: flicker 2s linear 0s infinite alternate;
+}
+
+.page2 .so-1 {
+  left: 308px;
+  top: 1099px;
+  z-index: 2;
+}
+
+.page2 .so-2 {
+  left: 0px;
+  top: 0px;
+  z-index: -2;
+}
+
+.page2 .so-3 {
+  left: 0px;
+  top: 0px;
+  z-index: -3;
+}
+
+.page2 .so-4 {
+  left: 445px;
+  top: 211px;
+  width: 116px;
+  height: 398px;
+  z-index: -4;
+}
+
+.page2 .so-5 {
+  left: 39px;
+  top: 0px;
+  z-index: -5;
+}
+
+.page2 .so-6 {
+  left: 58px;
+  top: 1px;
+  z-index: -6;
+}
+
+.page2 .so-7 {
+  left: 0px;
+  top: 216px;
+  z-index: -7;
+}
+
+.page2 .so-8 {
+  left: 0px;
+  top: 199px;
+  z-index: -8;
+}
+
+.page2 .so-9 {
+  left: 509px;
+  top: 1207px;
+  z-index: 9;
+}
+
+.page2 .so-10 {
+  left: 0px;
+  top: 844px;
+  z-index: -10;
+}
+
+.page2 .so-11 {
+  left: 43px;
+  top: 458px;
+  width: 727px;
+  height: 730px;
+  z-index: -11;
+}
+
+.page2 .so-12 {
+  left: 476px;
+  top: 469px;
+  z-index: -12;
+  transition: top 1s, opacity 1s;
+}
+
+.page2 .so-13 {
+  left: 186px;
+  top: 406px;
+  z-index: -13;
+  transition: top 1s, opacity 1s;
+}
+
+.page2 .so-14 {
+  left: 0px;
+  top: 423px;
+  z-index: -14;
+  transition: top 1s, opacity 1s;
+}
+
+.page2 .so-15 {
+  left: 528px;
+  top: 339px;
+  z-index: -15;
+  transition: top 1s, opacity 1s;
+}
+
+.page2 .so-16 {
+  left: 171px;
+  top: 0px;
+  z-index: -16;
+  transition: top 1s, opacity 1s;
+}
+
+.page2 .so-17 {
+  left: 0px;
+  top: 0px;
+  z-index: -17;
+}
+
+.page2 .so.zhuazhou {
+  opacity: 0;
+  top: -120px;
+}
+
+.page2 .shuzi-box {
+  background-image: url('../resource/shuzi-box.png');
+  width: 718px;
+  height: 899px;
+  position: absolute;
+  left: 15px;
+  top: 206px;
+  display: none;
+}
+
+.page2 .shuzi-box p {
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  line-height: 80px;
+  margin-top: 60px;
+}
+
+.page2 .shuzi-box .show {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 348px;
+  margin: 0 auto;
+}
+
+.page2 .shuzi-box .next {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 716px;
+}
+
+.page2 .panel {
+  background-image: url('../resource/panel.png');
+  width: 504px;
+  height: 737px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 88px;
+  display: none;
+}
+
+.page2 .panel .jixu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 622px;
+  margin: 0 auto;
+}
 
 
 /* 页面切换动画 */

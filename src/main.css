@@ -77,10 +77,26 @@ h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, bu
 }
 
 .fly {
-  animation: flyAni 2s 1 0s linear;
+  animation: flyAni 1s 1 0s linear;
   animation-fill-mode: forwards;
 }
 
 .toubi .shalte {
   display: block;
+}
+
+@keyframes zhuaquAni{
+  0%{
+      transform: rotate(xx) translateY(0);
+  }
+  50%{
+      transform: translateY(170px);
+      }
+  100%{
+      transform: translateY(0);
+      }
+}
+
+.zhuaqu {
+  animation: zhuaquAni 2s 1 0s linear;
 }

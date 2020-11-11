@@ -1,10 +1,267 @@
 <template lang="pug">
 .page2
-  
+  img.so.so-1(src="@|page2-1138-2.png|" o-touchstart="startTouch" o-touchend="stopTouch")
+  img.so.so-2(src="@|page2-1154.png|")
+  img.so.so-3(src="@|page2-1139.png|")
+  .so.so-4
+    img.so.so-5(src="@|page2-282.png|")
+    img.so.so-6(src="@|page2-1143.png|")
+    img.so.so-7(src="@|page2-280.png|")
+  img.so.so-8(src="@|page2-1153.png|")
+  img.so.so-9(src="@|page2-278.png|" o-animation="flicker" o-tap="zhuaqu")
+  img.so.so-10(src="@|page2-1147.png|")
+  .so.so-11
+    img.so.so-12(src="@|page2-1145.png|" o-animation="shrink")
+    img.so.so-13(src="@|page2-1148.png|" o-animation="shrink")
+    img.so.so-14(src="@|page2-1149.png|" o-animation="shrink")
+    img.so.so-15(src="@|page2-1150.png|" o-animation="shrink")
+    img.so.so-16(src="@|page2-1151.png|" o-animation="shrink")
+  img.so.so-17(src="@|page2-1152.jpg|")
+  .shuzi-box
+    .gongxi
+      p 恭喜你！<br>获得“生煎娃娃”并找到了隐藏数字668
+      img.show(src="@|page2-1145.png|")
+      img.next(src="@|next.png|" o-animation="shrink" o-tap="showShuzi")
+    .panel
+      img.jixu(src="@|jixu.png|" o-animation="shrink" o-tap="jixuzhua")
 </template>
 <script>
 module.exports = {
+  data: {
+    touching: false,
+    gouziLeft: 445,
+    giftList: []
+  },
+  startTouch: function () {
+    const x = this.$event.targetTouches[0].clientX
+    this.data.touching = true
+    if (x < 193) {
+      this.query('.so-1').src = '@|page2-1138-1.png|'
+      this.move(-1)
+    } else {
+      this.query('.so-1').src = '@|page2-1138.png|'
+      this.move(1)
+    }
+  },
+  move: function (step) {
+    if (this.data.gouziLeft > 738) this.data.gouziLeft = -110
+    if (this.data.gouziLeft < -110) this.data.gouziLeft = 738
+    const gouzi = this.query('.so-4')
+    gouzi.style.left = (this.data.gouziLeft += step) + 'px'
+    setTimeout(() => {
+      if(this.data.touching) this.move(step)
+    }, 0);
+  },
+  showShuzi: function () {
+    this.query('.panel').style.display = 'block'
+    this.query('.gongxi').style.display = 'none'
+    
+  },
+  jixuzhua: function () {
+    this.query('.panel').style.display = 'none'
+    this.query('.gongxi').style.display = 'block'
+    this.query('.shuzi-box').style.display = 'none'
+    
+  },
+  stopTouch: function () {
+    this.data.touching = false
+    this.query('.so-1').src = '@|page2-1138-2.png|'
+    console.log(this.$event)
+  },
+  zhuaqu: function () {
+    const gouziLeft = this.data.gouziLeft
+    this.query('.so-7').classList.add('zhuaqu')
+    setTimeout(() => {
+      this.query('.so-7').classList.remove('zhuaqu')
+      this.query('.shuzi-box').style.display = 'block'
+    }, 2000);
+    if (gouziLeft > 202 && gouziLeft < 600 && !this.data.giftList.includes('hua')) {
+      this.data.giftList.push('hua')
+      setTimeout(() => {
+        this.query('.so-16').classList.add('zhuazhou')
+      }, 1000);
+      return
+    }
+    if (gouziLeft > 239 && gouziLeft < 431 && !this.data.giftList.includes('xiongmao')) {
+      console.log('xiongmao')
+      this.data.giftList.push('xiongmao')
+      setTimeout(() => {
+        this.query('.so-13').classList.add('zhuazhou')
+      }, 1000);
+      return
+    }
+    if (gouziLeft > 55 && gouziLeft < 337 && !this.data.giftList.includes('fangzi')) {
+      console.log('fangzi')
+      this.data.giftList.push('fangzi')
+      setTimeout(() => {
+        this.query('.so-14').classList.add('zhuazhou')
+      }, 1000);
+      return
+    }
+    if (gouziLeft > 564 && gouziLeft < 671 && !this.data.giftList.includes('siyecao')) {
+      console.log('siyecao')
+      this.data.giftList.push('siyecao')
+      setTimeout(() => {
+        this.query('.so-15').classList.add('zhuazhou')
+      }, 1000);
+      return
+    }
+    if (gouziLeft > 514 && gouziLeft < 671 && !this.data.giftList.includes('bapzi')) {
+      console.log('bapzi')
+      this.data.giftList.push('bapzi')
+      setTimeout(() => {
+        this.query('.so-12').classList.add('zhuazhou')
+      }, 1000);
+      return
+    }
+  }
 }
 </script>
 <style lang="less">
+.so-1 {
+  left: 308px;
+  top: 1099px;
+  z-index: 2;
+}
+.so-2 {
+  left: 0px;
+  top: 0px;
+  z-index: -2;
+}
+.so-3 {
+  left: 0px;
+  top: 0px;
+  z-index: -3;
+}
+.so-4 {
+  left: 445px;
+  top: 211px;
+  width: 116px;
+  height: 398px;
+  z-index: -4;;
+}
+.so-5 {
+  left: 39px;
+  top: 0px;
+  z-index: -5;
+}
+.so-6 {
+  left: 58px;
+  top: 1px;
+  z-index: -6;
+}
+.so-7 {
+  left: 0px;
+  top: 216px;
+  z-index: -7;
+}
+.so-8 {
+  left: 0px;
+  top: 199px;
+  z-index: -8;
+}
+.so-9 {
+  left: 509px;
+  top: 1207px;
+  z-index: 9;
+}
+.so-10 {
+  left: 0px;
+  top: 844px;
+  z-index: -10;
+}
+.so-11 {
+  left: 43px;
+  top: 458px;
+  width: 727px;
+  height: 730px;
+  z-index: -11;;
+}
+.so-12 {
+  left: 476px;
+  top: 469px;
+  z-index: -12;
+  transition: top 1s, opacity 1s;
+}
+.so-13 {
+  left: 186px;
+  top: 406px;
+  z-index: -13;
+  transition: top 1s, opacity 1s;
+}
+.so-14 {
+  left: 0px;
+  top: 423px;
+  z-index: -14;
+  transition: top 1s, opacity 1s;
+}
+.so-15 {
+  left: 528px;
+  top: 339px;
+  z-index: -15;
+  transition: top 1s, opacity 1s;
+}
+.so-16 {
+  left: 171px;
+  top: 0px;
+  z-index: -16;
+  transition: top 1s, opacity 1s;
+}
+.so-17 {
+  left: 0px;
+  top: 0px;
+  z-index: -17;
+}
+.so.zhuazhou {
+  opacity: 0;
+  top: -120px;
+}
+.shuzi-box {
+  background-image: url('@|shuzi-box.png|');
+  width: 718px;
+  height: 899px;
+  position: absolute;
+  left: 15px;
+  top: 206px;
+  display: none;
+  p {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    margin-top: 60px;
+  }
+  .show {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 348px;
+    margin: 0 auto;
+  }
+  .next {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 716px;
+  }
+}
+.panel {
+  background-image: url('@|panel.png|');
+  width: 504px;
+  height: 737px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 88px;
+  display: none;
+  .jixu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 622px;
+    margin: 0 auto;
+  }
+}
 </style>
