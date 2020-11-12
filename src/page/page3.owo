@@ -1,6 +1,6 @@
 <template lang="pug">
 .page3
-  
+  img.share(src="@|share.jpg|")
 </template>
 <script>
 module.exports = {

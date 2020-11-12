@@ -17,20 +17,44 @@
     img.so.so-15(src="@|page2-1150.png|" o-animation="shrink")
     img.so.so-16(src="@|page2-1151.png|" o-animation="shrink")
   img.so.so-17(src="@|page2-1152.jpg|")
+  .so.so-0.fenxiang
+    img.so.fenxiang-1(src="@|1148-2.png|" o-animation="shrink" go="page3//scaleDown/scaleUpDown/true/scaleDown/scaleUp")
+    img.so.fenxiang-2(src="@|1147.png|" o-animation="shrink" o-tap="window.location.replace('')")
+    img.so.fenxiang-3(src="@|1146.png|")
+    img.so.fenxiang-4(src="@|1144-2.png|")
+    img.so.fenxiang-5(src="@|1143.png|")
+    img.so.fenxiang-6(src="@|1142.png|")
+    p <b>恭喜您</b><br>答对了全部题目<br>取得了游戏胜利
   .shuzi-box
     .gongxi
-      p 恭喜你！<br>获得“生煎娃娃”并找到了隐藏数字668
-      img.show(src="@|page2-1145.png|")
-      img.next(src="@|next.png|" o-animation="shrink" o-tap="showShuzi")
+      p 
+    img.show(src="@|page2-1145.png|")
+    img.next(src="@|show-number.png|" o-animation="shrink" o-tap="showShuzi")
+    img.shanguang(src="@|shanguang.png|" o-animation="flicker")
+    img.shuzi#shuzi(src="" draggable="true")
     .panel
       img.jixu(src="@|jixu.png|" o-animation="shrink" o-tap="jixuzhua")
+      //- 矩形们
+      .juxing.juxing-1(style="top: 144px;" o-animation="shrink" o-tap="checkNumber(0)")
+        img
+      .juxing.juxing-2(style="top: 242px;" o-animation="shrink" o-tap="checkNumber(1)")
+        img
+      .juxing.juxing-3(style="top: 340px;" o-animation="shrink" o-tap="checkNumber(2)")
+        img
+      .juxing.juxing-4(style="top: 435px;" o-animation="shrink" o-tap="checkNumber(3)")
+        img
+      .juxing.juxing-5(style="top: 535px;" o-animation="shrink" o-tap="checkNumber(4)")
+        img
 </template>
 <script>
 module.exports = {
   data: {
     touching: false,
     gouziLeft: 445,
-    giftList: []
+    giftList: [],
+    activeName: '',
+    dati: [],
+    youxicishu: 0
   },
   startTouch: function () {
     const x = this.$event.targetTouches[0].clientX
@@ -43,6 +67,8 @@ module.exports = {
       this.move(1)
     }
   },
+  created: function () {
+  },
   move: function (step) {
     if (this.data.gouziLeft > 738) this.data.gouziLeft = -110
     if (this.data.gouziLeft < -110) this.data.gouziLeft = 738
@@ -53,14 +79,50 @@ module.exports = {
     }, 0);
   },
   showShuzi: function () {
-    this.query('.panel').style.display = 'block'
+    // this.query('.panel').style.display = 'block'
     this.query('.gongxi').style.display = 'none'
-    
+    this.query('.next').style.display = 'none'
+    owo.animate('bounceOut', this.query('.show'), 0 , (dom) => {
+      dom.style.display = 'none'
+      this.query('.shuzi').style.display = 'block'
+      owo.animate('bounceIn', this.query('.shuzi'), 100)
+      
+      setTimeout(() => {
+        this.query('.panel').style.display = 'block'
+        this.query('.shuzi-box').classList.add('tuozhuai')
+      }, 2000);
+    })
   },
   jixuzhua: function () {
     this.query('.panel').style.display = 'none'
     this.query('.gongxi').style.display = 'block'
     this.query('.shuzi-box').style.display = 'none'
+    this.query('.show').style.display = 'block'
+    this.query('.next').style.display = 'block'
+    if (this.data.youxicishu >= 5) {
+      this.query('.shuzi').style.display = 'none'
+      const daan = ['180+', '3800+', '726.2', '36', '3000+']
+      let code = 0
+      for (let index = 0; index < daan.length; index++) {
+        const element = daan[index];
+        if (this.data.dati[index] == element) {
+          code++
+        }
+      }
+      if (code >= 5) {
+        this.query('.fenxiang p').innerHTML = '<b>恭喜您</b><br>答对了全部题目<br>取得了游戏胜利'
+      } else {
+        this.query('.fenxiang p').innerHTML = `<b>很遗憾</b><br>答错了${5 - code}道题目<br>再接再厉`
+      }
+      
+      this.query('.fenxiang').style.display = 'block'
+    } else {
+      setTimeout(() => {
+        this.query('.panel').classList.remove('can-next')
+        this.query('.shuzi-box').classList.remove('tuozhuai')
+        this.query('.shuzi').style.display = 'none'
+      }, 100);
+    }
     
   },
   stopTouch: function () {
@@ -73,47 +135,94 @@ module.exports = {
     this.query('.so-7').classList.add('zhuaqu')
     setTimeout(() => {
       this.query('.so-7').classList.remove('zhuaqu')
-      this.query('.shuzi-box').style.display = 'block'
     }, 2000);
     if (gouziLeft > 202 && gouziLeft < 600 && !this.data.giftList.includes('hua')) {
       this.data.giftList.push('hua')
+      this.data.activeName = '180+'
+      this.query('.show').src = '@|hua.png|'
+      this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“外滩风景图”'
+      this.query('.shuzi').src = '@|180+.png|'
       setTimeout(() => {
         this.query('.so-16').classList.add('zhuazhou')
       }, 1000);
+      setTimeout(() => {
+        this.query('.shuzi-box').style.display = 'block'
+      }, 2000);
       return
     }
     if (gouziLeft > 239 && gouziLeft < 431 && !this.data.giftList.includes('xiongmao')) {
       console.log('xiongmao')
+      this.data.activeName = '3800+'
+      this.query('.show').src = '@|page2-1148.png|'
       this.data.giftList.push('xiongmao')
+      this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“进宝”'
+      this.query('.shuzi').src = '@|3800+.png|'
       setTimeout(() => {
         this.query('.so-13').classList.add('zhuazhou')
       }, 1000);
+      setTimeout(() => {
+        this.query('.shuzi-box').style.display = 'block'
+      }, 2000);
       return
     }
     if (gouziLeft > 55 && gouziLeft < 337 && !this.data.giftList.includes('fangzi')) {
       console.log('fangzi')
+      this.data.activeName = '3000+'
+      this.query('.show').src = '@|page2-1149.png|'
       this.data.giftList.push('fangzi')
+      this.query('.shuzi').src = '@|3000+.png|'
+      this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“中国馆”'
       setTimeout(() => {
         this.query('.so-14').classList.add('zhuazhou')
       }, 1000);
+      setTimeout(() => {
+        this.query('.shuzi-box').style.display = 'block'
+      }, 2000);
       return
     }
     if (gouziLeft > 564 && gouziLeft < 671 && !this.data.giftList.includes('siyecao')) {
       console.log('siyecao')
+      this.data.activeName = '726.2'
+      this.query('.show').src = '@|page2-1150.png|'
       this.data.giftList.push('siyecao')
+      this.query('.shuzi').src = '@|726.2.png|'
+      this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“幸运草”'
       setTimeout(() => {
         this.query('.so-15').classList.add('zhuazhou')
       }, 1000);
+      setTimeout(() => {
+        this.query('.shuzi-box').style.display = 'block'
+      }, 2000);
       return
     }
-    if (gouziLeft > 514 && gouziLeft < 671 && !this.data.giftList.includes('bapzi')) {
-      console.log('bapzi')
-      this.data.giftList.push('bapzi')
+    if (gouziLeft > 514 && gouziLeft < 671 && !this.data.giftList.includes('baozi')) {
+      console.log('baozi')
+      this.data.activeName = '36'
+      this.query('.show').src = '@|page2-1145.png|'
+      this.data.giftList.push('baozi')
+      this.query('.shuzi').src = '@|36.png|'
+      this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“生煎娃娃”'
       setTimeout(() => {
         this.query('.so-12').classList.add('zhuazhou')
       }, 1000);
+      setTimeout(() => {
+        this.query('.shuzi-box').style.display = 'block'
+      }, 2000);
       return
     }
+  },
+  checkNumber: function (num) {
+    num = parseInt(num)
+    this.data.dati[num] = this.data.activeName
+    this.data.youxicishu++
+    this.$target.query('img').src = `./static/resource/${this.data.activeName}.png`
+    this.$target.query('img').style.display = 'block'
+    this.$target.removeAttribute('o-animation')
+    // 判断是否最后了
+    if (this.data.youxicishu >= 5) {
+      this.query('.jixu').src = '@|tijiao.png|'
+    }
+    this.query('.panel').classList.add('can-next')
   }
 }
 </script>
@@ -235,21 +344,31 @@ module.exports = {
     position: absolute;
     left: 0;
     right: 0;
-    top: 348px;
+    top: 275px;
     margin: 0 auto;
+  }
+  .shuzi {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 398px;
+    margin: 0 auto;
+    display: none;
+    z-index: 999;
+    transition: width 2s, top 2s, left 2s ;
   }
   .next {
     position: absolute;
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: 716px;
+    top: 780px;
   }
 }
 .panel {
   background-image: url('@|panel.png|');
   width: 504px;
-  height: 737px;
+  height: 764px;
   position: absolute;
   left: 0;
   right: 0;
@@ -262,6 +381,113 @@ module.exports = {
     right: 0;
     top: 622px;
     margin: 0 auto;
+    display: none;
+  }
+}
+.shanguang {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 332px;
+  user-select: none;
+  pointer-events: none;
+}
+.tuozhuai {
+  .shuzi {
+    top: 0px;
+    width: 200px;
+  }
+  .gongxi, .shanguang {
+    display: none;
+  }
+  .panel {
+    display: block;
+  }
+}
+.juxing {
+  background-image: url('@|juxing.png|');
+  width: 155px;
+  height: 52px;
+  position: absolute;
+  left: 293px;
+  img {
+    position: absolute;
+    display: none;
+    height: 35px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+  }
+}
+.can-next {
+  .jixu {
+    display: block;
+  }
+  .juxing {
+    user-select: none;
+    pointer-events: none;
+  }
+}
+.fenxiang-0 {
+  left: 15px;
+  top: 211px;
+  width: 717px;
+  height: 893px;
+  z-index: 0;;
+}
+.fenxiang-1 {
+  left: 368px;
+  top: 754px;
+  z-index: 3;
+}
+.fenxiang-2 {
+  left: 91px;
+  top: 754px;
+  z-index: 1;
+}
+.fenxiang-3 {
+  left: 107px;
+  top: 88px;
+  z-index: -3;
+}
+.fenxiang-4 {
+  left: 124px;
+  top: 556px;
+  z-index: -4;
+}
+.fenxiang-5 {
+  left: 39px;
+  top: 22px;
+  z-index: -5;
+  display: none;
+}
+.fenxiang-6 {
+  left: 0px;
+  top: 0px;
+  z-index: -6;
+}
+.fenxiang {
+  width: 717px;
+  height: 893px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 212px;
+  display: none;
+  p {
+    color: #323a3d;
+    font-size: 40px;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    top: 224px;
   }
 }
 </style>

@@ -30,7 +30,7 @@
         this.$el.classList.remove('jieshao')
         this.$el.classList.add('toubi')
         setTimeout(() => {
-          owo.go('page2///scaleDown/scaleUpDown/true/scaleDown/scaleUp')
+          owo.go('page2//scaleDown/scaleUpDown/true/scaleDown/scaleUp')
         }, 1200);
       }
     }

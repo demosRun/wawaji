@@ -1,4 +1,4 @@
-// Wed Nov 11 2020 23:42:03 GMT+0800 (GMT+08:00)
+// Thu Nov 12 2020 22:39:03 GMT+0800 (GMT+08:00)
 var owo = {tool: {},state: {},};
 /* 方法合集 */
 var _owo = {
@@ -179,6 +179,16 @@ _owo.addEvent = function (tempDom, moudleScript) {
                   
                 }
                 break;
+              case 'TEXTAREA':
+                if (value == undefined) value = ''
+                tempDom.value = value
+                tempDom.onchange = function (e) {
+                  var eventFor = e.target.getAttribute('o-value')
+                  var value = e.target.value
+                  if (value == '') value = '""'
+                  shaheRun.apply(moudleScript, [eventFor + '="' + value + '"'])
+                }
+                break;
               case 'SELECT':
                 if (value == null || value == undefined) value = ''
                 var activeOpt = tempDom.querySelector('[value="' + value + '"]')
@@ -258,6 +268,37 @@ _owo.cutStringArray = function (original, before, after, index, inline) {
 
 
 
+
+/**
+ * 赋予节点动画效果
+ * @param  {string} name 动画效果名称
+ * @param  {dom} dom 节点
+ */
+owo.animate = function (name, dom, delay, callBack) {
+  // 都使用IE了效果还重要吗
+  if (_owo.isIE) return
+  var owoAni = dom.getAttribute('o-animation')
+  if (owoAni) {
+    dom.setAttribute('o-animation', owoAni + '-suspend')
+  }
+  dom.classList.add(name)
+  dom.classList.add('owo-animated')
+  if (delay) {
+    dom.style.animationDelay = delay + 'ms'
+  }
+  dom.addEventListener('animationend', animateEnd)
+  function animateEnd () {
+    if (callBack) callBack(dom)
+    dom.classList.remove(name)
+    dom.classList.remove('owo-animated')
+    if (delay) {
+      dom.style.animationDelay = ''
+    }
+    if (owoAni) {
+      dom.setAttribute('o-animation', owoAni)
+    }
+  }
+}
 
 // 页面切换
 
@@ -367,6 +408,14 @@ _owo.animation = function (oldDom, newDom, animationIn, animationOut, forward) {
 
 
 
+
+// 计算$dom
+var idList = document.querySelectorAll('[id]')
+owo.id = {}
+for (var ind = 0; ind < idList.length; ind++) {
+  var item = idList[ind]
+  owo.id[item.getAttribute('id')] = item
+}
 
 // 判断是否为手机
 _owo.isMobi = navigator.userAgent.toLowerCase().match(/(ipod|ipad|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null
@@ -565,6 +614,15 @@ owo.go = function (aniStr) {
   }
 }
 
+
+// 待修复 跳转返回没有了
+var toList = document.querySelectorAll('[go]')
+for (var index = 0; index < toList.length; index++) {
+  var element = toList[index]
+  element.onclick = function () {
+    owo.go(this.attributes['go'].value)
+  }
+}
 
 // 沙盒运行
 function shaheRun (code) {
