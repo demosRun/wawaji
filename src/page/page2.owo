@@ -24,7 +24,7 @@
     img.so.fenxiang-4(src="@|1144-2.png|")
     img.so.fenxiang-5(src="@|1143.png|")
     img.so.fenxiang-6(src="@|1142.png|")
-    p <b>恭喜您</b><br>答对了全部题目<br>取得了游戏胜利
+    p <b>恭喜您</b><br>答对了全部题目<br>获得了游戏胜利
   .shuzi-box
     .gongxi
       p 
@@ -35,15 +35,15 @@
     .panel
       img.jixu(src="@|jixu.png|" o-animation="shrink" o-tap="jixuzhua")
       //- 矩形们
-      .juxing.juxing-1(style="top: 144px;" o-animation="shrink" o-tap="checkNumber(0)")
+      .juxing.juxing-1(style="top: 157px;" o-animation="shrink" o-tap="checkNumber(0)")
         img
-      .juxing.juxing-2(style="top: 242px;" o-animation="shrink" o-tap="checkNumber(1)")
+      .juxing.juxing-2(style="top: 255px;" o-animation="shrink" o-tap="checkNumber(1)")
         img
-      .juxing.juxing-3(style="top: 340px;" o-animation="shrink" o-tap="checkNumber(2)")
+      .juxing.juxing-3(style="top: 358px;" o-animation="shrink" o-tap="checkNumber(2)")
         img
-      .juxing.juxing-4(style="top: 435px;" o-animation="shrink" o-tap="checkNumber(3)")
+      .juxing.juxing-4(style="top: 460px;" o-animation="shrink" o-tap="checkNumber(3)")
         img
-      .juxing.juxing-5(style="top: 535px;" o-animation="shrink" o-tap="checkNumber(4)")
+      .juxing.juxing-5(style="top: 563px;" o-animation="shrink" o-tap="checkNumber(4)")
         img
 </template>
 <script>
@@ -68,6 +68,7 @@ module.exports = {
     }
   },
   created: function () {
+    owo.tool.toast('拨动摇杆按下按钮抓取礼物')
   },
   move: function (step) {
     if (this.data.gouziLeft > 738) this.data.gouziLeft = -110
@@ -110,7 +111,7 @@ module.exports = {
         }
       }
       if (code >= 5) {
-        this.query('.fenxiang p').innerHTML = '<b>恭喜您</b><br>答对了全部题目<br>取得了游戏胜利'
+        this.query('.fenxiang p').innerHTML = '<b>恭喜您</b><br>答对了全部题目<br>获得了游戏胜利'
       } else {
         this.query('.fenxiang p').innerHTML = `<b>很遗憾</b><br>答错了${5 - code}道题目<br>再接再厉`
       }
@@ -212,9 +213,11 @@ module.exports = {
     }
   },
   checkNumber: function (num) {
+    if (!this.$target.query('img')) return
     num = parseInt(num)
     this.data.dati[num] = this.data.activeName
     this.data.youxicishu++
+    this.$target.style.pointerEvents = 'none'
     this.$target.query('img').src = `./static/resource/${this.data.activeName}.png`
     this.$target.query('img').style.display = 'block'
     this.$target.removeAttribute('o-animation')
@@ -386,7 +389,7 @@ module.exports = {
     position: absolute;
     left: 0;
     right: 0;
-    top: 622px;
+    top: 630px;
     margin: 0 auto;
     display: none;
   }
@@ -417,7 +420,9 @@ module.exports = {
   width: 155px;
   height: 52px;
   position: absolute;
-  left: 293px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   img {
     position: absolute;
     display: none;
@@ -453,7 +458,7 @@ module.exports = {
 .fenxiang-2 {
   left: 91px;
   top: 754px;
-  z-index: 1;
+  z-index: 11;
 }
 .fenxiang-3 {
   left: 107px;

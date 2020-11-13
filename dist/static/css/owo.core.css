@@ -433,7 +433,7 @@ li {
   position: absolute;
   left: 0;
   right: 0;
-  top: 622px;
+  top: 630px;
   margin: 0 auto;
   display: none;
 }
@@ -470,7 +470,9 @@ li {
   width: 155px;
   height: 52px;
   position: absolute;
-  left: 293px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .page2 .juxing img {
@@ -513,7 +515,7 @@ li {
 .page2 .fenxiang-2 {
   left: 91px;
   top: 754px;
-  z-index: 1;
+  z-index: 11;
 }
 
 .page2 .fenxiang-3 {

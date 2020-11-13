@@ -84,7 +84,7 @@
         <img class="so fenxiang-4" src="./static/resource/1144-2.png">
         <img class="so fenxiang-5" src="./static/resource/1143.png">
         <img class="so fenxiang-6" src="./static/resource/1142.png">
-        <p><b>恭喜您</b><br>答对了全部题目<br>取得了游戏胜利</p>
+        <p><b>恭喜您</b><br>答对了全部题目<br>获得了游戏胜利</p>
       </div>
       <div class="shuzi-box">
         <div class="gongxi">
@@ -96,19 +96,19 @@
         <img class="shuzi" id="shuzi" src="" draggable="true">
         <div class="panel">
           <img class="jixu" src="./static/resource/jixu.png" o-animation="shrink" o-tap="jixuzhua">
-          <div class="juxing juxing-1" style="top: 144px;" o-animation="shrink" o-tap="checkNumber(0)">
+          <div class="juxing juxing-1" style="top: 157px;" o-animation="shrink" o-tap="checkNumber(0)">
             <img>
           </div>
-          <div class="juxing juxing-2" style="top: 242px;" o-animation="shrink" o-tap="checkNumber(1)">
+          <div class="juxing juxing-2" style="top: 255px;" o-animation="shrink" o-tap="checkNumber(1)">
             <img>
           </div>
-          <div class="juxing juxing-3" style="top: 340px;" o-animation="shrink" o-tap="checkNumber(2)">
+          <div class="juxing juxing-3" style="top: 358px;" o-animation="shrink" o-tap="checkNumber(2)">
             <img>
           </div>
-          <div class="juxing juxing-4" style="top: 435px;" o-animation="shrink" o-tap="checkNumber(3)">
+          <div class="juxing juxing-4" style="top: 460px;" o-animation="shrink" o-tap="checkNumber(3)">
             <img>
           </div>
-          <div class="juxing juxing-5" style="top: 535px;" o-animation="shrink" o-tap="checkNumber(4)">
+          <div class="juxing juxing-5" style="top: 563px;" o-animation="shrink" o-tap="checkNumber(4)">
             <img>
           </div>
         </div>
@@ -224,6 +224,9 @@
             this.move(1);
           }
         },
+        "created": function created() {
+          owo.tool.toast('拨动摇杆按下按钮抓取礼物');
+        },
         "move": function move(step) {
           var _this2 = this;
 
@@ -275,7 +278,7 @@
             }
 
             if (code >= 5) {
-              this.query('.fenxiang p').innerHTML = '<b>恭喜您</b><br>答对了全部题目<br>取得了游戏胜利';
+              this.query('.fenxiang p').innerHTML = '<b>恭喜您</b><br>答对了全部题目<br>获得了游戏胜利';
             } else {
               this.query('.fenxiang p').innerHTML = "<b>\u5F88\u9057\u61BE</b><br>\u7B54\u9519\u4E86" + (5 - code) + "\u9053\u9898\u76EE<br>\u518D\u63A5\u518D\u5389";
             }
@@ -385,9 +388,11 @@
           }
         },
         "checkNumber": function checkNumber(num) {
+          if (!this.$target.query('img')) return;
           num = parseInt(num);
           this.data.dati[num] = this.data.activeName;
           this.data.youxicishu++;
+          this.$target.style.pointerEvents = 'none';
           this.$target.query('img').src = "./static/resource/" + this.data.activeName + ".png";
           this.$target.query('img').style.display = 'block';
           this.$target.removeAttribute('o-animation'); // 判断是否最后了
@@ -399,7 +404,11 @@
           this.query('.panel').classList.add('can-next');
         }
       },
-      "page3": {},
+      "page3": {
+        "created": function created() {
+          owo.tool.toast('长按保存图片分享至朋友圈');
+        }
+      },
       "page4": {},
       "music": {
         "data": {
@@ -438,6 +447,7 @@
   <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
   <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
 
+  <script src="./static/js/toast.js" type="text/javascript" charset="UTF-8"></script>
 </body>
 
 </html>

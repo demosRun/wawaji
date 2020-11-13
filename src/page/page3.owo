@@ -4,6 +4,9 @@
 </template>
 <script>
 module.exports = {
+  created: function () {
+    owo.tool.toast('长按保存图片分享至朋友圈')
+  }
 }
 </script>
 <style lang="less">
