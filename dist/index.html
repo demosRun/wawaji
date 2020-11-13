@@ -1,358 +1,443 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <!-- 页面的元信息 -->
-    <title>{TAG_14226_TAG}</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
-    <meta name="format-detection" content="telephone=no, email=no"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
-    <meta name="renderer" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="filetype" content="1"/>
-    <meta name="publishedtype" content="1"/>
-    <meta name="pagetype" content="2"/>
-    <meta name="screen-orientation" content="landscape"/>
-    <meta name="x5-orientation" content="landscape"/>
-    <meta name="full-screen" content="yes"/>
-    <meta name="x5-fullscreen" content="true"/>
-    <meta name="browsermode" content="application"/>
-    <meta name="x5-page-mode" content="app"/>
-    
-      <!-- 页面主样式文件 -->
-      <link charset="utf-8"  rel="stylesheet" href="./static/css/owo.core.css">
-      
-    <!-- 附属css文件 -->
-    <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
-      
-  </head>
-  <body>
-    <div class="scale-box">
+
+<head>
+  <!-- 页面的元信息 -->
+  <title>{TAG_14226_TAG}</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="filetype" content="1" />
+  <meta name="publishedtype" content="1" />
+  <meta name="pagetype" content="2" />
+  <meta name="screen-orientation" content="landscape" />
+  <meta name="x5-orientation" content="landscape" />
+  <meta name="full-screen" content="yes" />
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="browsermode" content="application" />
+  <meta name="x5-page-mode" content="app" />
+
+  <!-- 页面主样式文件 -->
+  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.core.css">
+
+  <!-- 附属css文件 -->
+  <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
+
+</head>
+
+<body>
+  <div class="scale-box">
     <!-- 页面[loading]-->
-    <div class="loading-box page" template="loading" style="display: none;"><img class="loading" src="./static/resource/loading.png"><div class="loading-bar"><div class="num-bar"></div></div><span class="text">Loading</span><div class="num">0%</div></div>
+    <div class="loading-box page" template="loading" style="display: none;">
+      <img class="loading" src="./static/resource/loading.png">
+      <div class="loading-bar">
+        <div class="num-bar"></div>
+      </div>
+      <span class="text">Loading</span>
+      <div class="num">0%</div>
+    </div>
     <!-- 页面[page1]-->
-    <div class="page-1 page" template="page1" style="display: none;"><div class="so so-0"><img class="so so-1" src="./static/resource/1144.png"><img class="so so-2" src="./static/resource/1155.png" o-animation="shrink" o-tap="showGuiZe"><img class="so so-3" src="./static/resource/1153.png"><img class="so so-4" src="./static/resource/1148.png"><img class="so so-5" src="./static/resource/1152.png"><img class="so so-6" src="./static/resource/1150.png" o-animation="floatLeftRight"><img class="so so-7" src="./static/resource/1157.jpg"><img class="shuoming" src="./static/resource/shuoming.png"><div class="shalte"><img class="yingbi fly" src="./static/resource/yingbi.png"></div></div></div>
+    <div class="page-1 page" template="page1" style="display: none;">
+      <div class="so so-0">
+        <img class="so so-1" src="./static/resource/1144.png">
+        <img class="so so-2" src="./static/resource/1155.png" o-animation="shrink" o-tap="showGuiZe">
+        <img class="so so-3" src="./static/resource/1153.png">
+        <img class="so so-4" src="./static/resource/1148.png">
+        <img class="so so-5" src="./static/resource/1152.png">
+        <img class="so so-6" src="./static/resource/1150.png" o-animation="floatLeftRight">
+        <img class="so so-7" src="./static/resource/1157.jpg">
+        <img class="shuoming" src="./static/resource/shuoming.png">
+        <div class="shalte">
+          <img class="yingbi fly" src="./static/resource/yingbi.png">
+        </div>
+      </div>
+    </div>
     <!-- 页面[page2]-->
-    <div class="page2 page" template="page2" style="display: none;"><img class="so so-1" src="./static/resource/page2-1138-2.png" o-touchstart="startTouch" o-touchend="stopTouch"><img class="so so-2" src="./static/resource/page2-1154.png"><img class="so so-3" src="./static/resource/page2-1139.png"><div class="so so-4"><img class="so so-5" src="./static/resource/page2-282.png"><img class="so so-6" src="./static/resource/page2-1143.png"><img class="so so-7" src="./static/resource/page2-280.png"></div><img class="so so-8" src="./static/resource/page2-1153.png"><img class="so so-9" src="./static/resource/page2-278.png" o-animation="flicker" o-tap="zhuaqu"><img class="so so-10" src="./static/resource/page2-1147.png"><div class="so so-11"><img class="so so-12" src="./static/resource/page2-1145.png" o-animation="shrink"><img class="so so-13" src="./static/resource/page2-1148.png" o-animation="shrink"><img class="so so-14" src="./static/resource/page2-1149.png" o-animation="shrink"><img class="so so-15" src="./static/resource/page2-1150.png" o-animation="shrink"><img class="so so-16" src="./static/resource/page2-1151.png" o-animation="shrink"></div><img class="so so-17" src="./static/resource/page2-1152.jpg"><div class="so so-0 fenxiang"><img class="so fenxiang-1" src="./static/resource/1148-2.png" o-animation="shrink" go="page3//scaleDown/scaleUpDown/true/scaleDown/scaleUp"><img class="so fenxiang-2" src="./static/resource/1147.png" o-animation="shrink" o-tap="window.location.replace('')"><img class="so fenxiang-3" src="./static/resource/1146.png"><img class="so fenxiang-4" src="./static/resource/1144-2.png"><img class="so fenxiang-5" src="./static/resource/1143.png"><img class="so fenxiang-6" src="./static/resource/1142.png"><p><b>恭喜您</b><br>答对了全部题目<br>取得了游戏胜利</p></div><div class="shuzi-box"><div class="gongxi"><p> </p></div><img class="show" src="./static/resource/page2-1145.png"><img class="next" src="./static/resource/show-number.png" o-animation="shrink" o-tap="showShuzi"><img class="shanguang" src="./static/resource/shanguang.png" o-animation="flicker"><img class="shuzi" id="shuzi" src="" draggable="true"><div class="panel"><img class="jixu" src="./static/resource/jixu.png" o-animation="shrink" o-tap="jixuzhua"><div class="juxing juxing-1" style="top: 144px;" o-animation="shrink" o-tap="checkNumber(0)"><img></div><div class="juxing juxing-2" style="top: 242px;" o-animation="shrink" o-tap="checkNumber(1)"><img></div><div class="juxing juxing-3" style="top: 340px;" o-animation="shrink" o-tap="checkNumber(2)"><img></div><div class="juxing juxing-4" style="top: 435px;" o-animation="shrink" o-tap="checkNumber(3)"><img></div><div class="juxing juxing-5" style="top: 535px;" o-animation="shrink" o-tap="checkNumber(4)"><img></div></div></div></div>
+    <div class="page2 page" template="page2" style="display: none;">
+      <div class="so so-1" o-touchstart="startTouch" o-touchend="stopTouch"></div>
+      <img class="so so-2" src="./static/resource/page2-1154.png">
+      <img class="so so-3" src="./static/resource/page2-1139.png">
+      <div class="so so-4">
+        <img class="so so-5" src="./static/resource/page2-282.png">
+        <img class="so so-6" src="./static/resource/page2-1143.png">
+        <img class="so so-7" src="./static/resource/page2-280.png">
+      </div>
+      <img class="so so-8" src="./static/resource/page2-1153.png">
+      <img class="so so-9" src="./static/resource/page2-278.png" o-animation="flicker" o-tap="zhuaqu">
+      <img class="so so-10" src="./static/resource/page2-1147.png">
+      <div class="so so-11">
+        <img class="so so-12" src="./static/resource/page2-1145.png" o-animation="shrink">
+        <img class="so so-13" src="./static/resource/page2-1148.png" o-animation="shrink">
+        <img class="so so-14" src="./static/resource/page2-1149.png" o-animation="shrink">
+        <img class="so so-15" src="./static/resource/page2-1150.png" o-animation="shrink">
+        <img class="so so-16" src="./static/resource/page2-1151.png" o-animation="shrink">
+      </div>
+      <img class="so so-17" src="./static/resource/page2-1152.jpg">
+      <div class="so so-0 fenxiang">
+        <img class="so fenxiang-1" src="./static/resource/1148-2.png" o-animation="shrink" go="page3//scaleDown/scaleUpDown/true/scaleDown/scaleUp">
+        <img class="so fenxiang-2" src="./static/resource/1147.png" o-animation="shrink" o-tap="window.location.replace('')">
+        <img class="so fenxiang-3" src="./static/resource/1146.png">
+        <img class="so fenxiang-4" src="./static/resource/1144-2.png">
+        <img class="so fenxiang-5" src="./static/resource/1143.png">
+        <img class="so fenxiang-6" src="./static/resource/1142.png">
+        <p><b>恭喜您</b><br>答对了全部题目<br>取得了游戏胜利</p>
+      </div>
+      <div class="shuzi-box">
+        <div class="gongxi">
+          <p> </p>
+        </div>
+        <img class="show" src="./static/resource/page2-1145.png">
+        <img class="next" src="./static/resource/show-number.png" o-animation="shrink" o-tap="showShuzi">
+        <img class="shanguang" src="./static/resource/shanguang.png" o-animation="flicker">
+        <img class="shuzi" id="shuzi" src="" draggable="true">
+        <div class="panel">
+          <img class="jixu" src="./static/resource/jixu.png" o-animation="shrink" o-tap="jixuzhua">
+          <div class="juxing juxing-1" style="top: 144px;" o-animation="shrink" o-tap="checkNumber(0)">
+            <img>
+          </div>
+          <div class="juxing juxing-2" style="top: 242px;" o-animation="shrink" o-tap="checkNumber(1)">
+            <img>
+          </div>
+          <div class="juxing juxing-3" style="top: 340px;" o-animation="shrink" o-tap="checkNumber(2)">
+            <img>
+          </div>
+          <div class="juxing juxing-4" style="top: 435px;" o-animation="shrink" o-tap="checkNumber(3)">
+            <img>
+          </div>
+          <div class="juxing juxing-5" style="top: 535px;" o-animation="shrink" o-tap="checkNumber(4)">
+            <img>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- 页面[page3]-->
-    <div class="page3 page" template="page3" style="display: none;"><img class="share" src="./static/resource/share.jpg"></div>
+    <div class="page3 page" template="page3" style="display: none;">
+      <img class="share" src="./static/resource/share.jpg">
+    </div>
     <!-- 页面[page4]-->
-    <div class="page4 page" template="page4" style="display: none;"></div></div>
-    <!-- 插件[music]-->
-    <div class="music-menu owo-block" template="music" style="display: none;"><img class="music-icon" src="https://cunchu.site/ozzx/resource/music.png" o-tap="switchPlay"></div>
-    
-<!-- 框架script文件 -->
-<script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
-<script type="text/javascript" charset="UTF-8">
-// 模块 music 的script代码
-// 微信自动播放音乐
-document.addEventListener("WeixinJSBridgeReady", function () {
-  owo.script.music.play();
-}, false);
-owo.script = {
-  "loading": {
-    "data": {
-      "imgList": [""]
-    },
-    "show": function show() {
-      var mum = owo.query('.num')[0];
-      var numBar = owo.query('.num-bar')[0];
-      this.preloadImages(this.data.imgList, function (e) {
-        setTimeout(function () {
-          owo.go('page1////true');
-        }, 500);
-      }, function (num) {
-        numBar.style.width = num + '%';
-        mum.innerHTML = num + '%';
-      });
-    },
-    "preloadImage": function preloadImage(src, successFn) {
-      var image = new Image();
-      image.src = src;
+    <div class="page4 page" template="page4" style="display: none;"></div>
+  </div>
+  <!-- 插件[music]-->
+  <div class="music-menu owo-block" template="music" style="display: none;">
+    <img class="music-icon" src="https://cunchu.site/ozzx/resource/music.png" o-tap="switchPlay">
+  </div>
 
-      image.onload = function () {
-        successFn && successFn(src);
-      };
-
-      image.onerror = function (error) {
-        successFn && successFn(src);
-      };
-    },
-    "preloadImages": function preloadImages(srcs, doneFn, progressFn) {
-      var _this = this;
-
-      if (!Array.isArray(srcs)) {
-        console.log('第一个参数只能是一个数组');
-      } else {
-        var allCount = srcs.length;
-        var doneCount = 0;
-        srcs.forEach(function (srcItem) {
-          _this.preloadImage(srcItem, function () {
-            doneCount++;
-            progressFn && progressFn(Math.ceil(100 * doneCount / allCount));
-
-            if (doneCount === allCount) {
-              doneFn && doneFn();
-            }
+  <!-- 框架script文件 -->
+  <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
+  <script type="text/javascript" charset="UTF-8">
+    // 模块 music 的script代码
+    // 微信自动播放音乐
+    document.addEventListener("WeixinJSBridgeReady", function() {
+      owo.script.music.play();
+    }, false);
+    owo.script = {
+      "loading": {
+        "data": {
+          "imgList": [""]
+        },
+        "show": function show() {
+          var mum = owo.query('.num')[0];
+          var numBar = owo.query('.num-bar')[0];
+          this.preloadImages(this.data.imgList, function(e) {
+            setTimeout(function() {
+              owo.go('page1////true');
+            }, 500);
+          }, function(num) {
+            numBar.style.width = num + '%';
+            mum.innerHTML = num + '%';
           });
-        });
-      }
-    }
-  },
-  "page1": {
-    "data": {
-      "step": 0
-    },
-    "showGuiZe": function showGuiZe() {
-      this.data.step++;
+        },
+        "preloadImage": function preloadImage(src, successFn) {
+          var image = new Image();
+          image.src = src;
 
-      if (this.data.step == 1) {
-        this.$el.classList.add('jieshao');
-        this.query('.so-2').src = './static/resource/start.png';
-      } else {
-        this.$el.classList.remove('jieshao');
-        this.$el.classList.add('toubi');
-        setTimeout(function () {
-          owo.go('page2//scaleDown/scaleUpDown/true/scaleDown/scaleUp');
-        }, 1200);
-      }
-    }
-  },
-  "page2": {
-    "data": {
-      "touching": false,
-      "gouziLeft": 445,
-      "giftList": [],
-      "activeName": "",
-      "dati": [],
-      "youxicishu": 0
-    },
-    "startTouch": function startTouch() {
-      var x = this.$event.targetTouches[0].clientX;
-      this.data.touching = true;
+          image.onload = function() {
+            successFn && successFn(src);
+          };
 
-      if (x < 193) {
-        this.query('.so-1').src = './static/resource/page2-1138-1.png';
-        this.move(-1);
-      } else {
-        this.query('.so-1').src = './static/resource/page2-1138.png';
-        this.move(1);
-      }
-    },
-    "move": function move(step) {
-      var _this2 = this;
+          image.onerror = function(error) {
+            successFn && successFn(src);
+          };
+        },
+        "preloadImages": function preloadImages(srcs, doneFn, progressFn) {
+          var _this = this;
 
-      if (this.data.gouziLeft > 738) this.data.gouziLeft = -110;
-      if (this.data.gouziLeft < -110) this.data.gouziLeft = 738;
-      var gouzi = this.query('.so-4');
-      gouzi.style.left = (this.data.gouziLeft += step) + 'px';
-      setTimeout(function () {
-        if (_this2.data.touching) _this2.move(step);
-      }, 0);
-    },
-    "showShuzi": function showShuzi() {
-      var _this3 = this;
+          if (!Array.isArray(srcs)) {
+            console.log('第一个参数只能是一个数组');
+          } else {
+            var allCount = srcs.length;
+            var doneCount = 0;
+            srcs.forEach(function(srcItem) {
+              _this.preloadImage(srcItem, function() {
+                doneCount++;
+                progressFn && progressFn(Math.ceil(100 * doneCount / allCount));
 
-      // this.query('.panel').style.display = 'block'
-      this.query('.gongxi').style.display = 'none';
-      this.query('.next').style.display = 'none';
-      owo.animate('bounceOut', this.query('.show'), 0, function (dom) {
-        dom.style.display = 'none';
-        _this3.query('.shuzi').style.display = 'block';
-        owo.animate('bounceIn', _this3.query('.shuzi'), 100);
-        setTimeout(function () {
-          _this3.query('.panel').style.display = 'block';
-
-          _this3.query('.shuzi-box').classList.add('tuozhuai');
-        }, 2000);
-      });
-    },
-    "jixuzhua": function jixuzhua() {
-      var _this4 = this;
-
-      this.query('.panel').style.display = 'none';
-      this.query('.gongxi').style.display = 'block';
-      this.query('.shuzi-box').style.display = 'none';
-      this.query('.show').style.display = 'block';
-      this.query('.next').style.display = 'block';
-
-      if (this.data.youxicishu >= 5) {
-        this.query('.shuzi').style.display = 'none';
-        var daan = ['180+', '3800+', '726.2', '36', '3000+'];
-        var code = 0;
-
-        for (var index = 0; index < daan.length; index++) {
-          var element = daan[index];
-
-          if (this.data.dati[index] == element) {
-            code++;
+                if (doneCount === allCount) {
+                  doneFn && doneFn();
+                }
+              });
+            });
           }
         }
+      },
+      "page1": {
+        "data": {
+          "step": 0
+        },
+        "showGuiZe": function showGuiZe() {
+          this.data.step++;
 
-        if (code >= 5) {
-          this.query('.fenxiang p').innerHTML = '<b>恭喜您</b><br>答对了全部题目<br>取得了游戏胜利';
-        } else {
-          this.query('.fenxiang p').innerHTML = "<b>\u5F88\u9057\u61BE</b><br>\u7B54\u9519\u4E86" + (5 - code) + "\u9053\u9898\u76EE<br>\u518D\u63A5\u518D\u5389";
+          if (this.data.step == 1) {
+            this.$el.classList.add('jieshao');
+            this.query('.so-2').src = './static/resource/start.png';
+          } else {
+            this.$el.classList.remove('jieshao');
+            this.$el.classList.add('toubi');
+            setTimeout(function() {
+              owo.go('page2//scaleDown/scaleUpDown/true/scaleDown/scaleUp');
+            }, 1200);
+          }
         }
+      },
+      "page2": {
+        "data": {
+          "touching": false,
+          "gouziLeft": 445,
+          "giftList": [],
+          "activeName": "",
+          "dati": [],
+          "youxicishu": 0
+        },
+        "startTouch": function startTouch() {
+          var x = this.$event.targetTouches[0].clientX;
+          this.data.touching = true;
 
-        this.query('.fenxiang').style.display = 'block';
-      } else {
-        setTimeout(function () {
-          _this4.query('.panel').classList.remove('can-next');
+          if (x > 193) {
+            this.query('.so-1').style.background = 'url(./static/resource/page2-1138-1.png)';
+            this.move(-1);
+          } else {
+            this.query('.so-1').style.background = 'url(./static/resource/page2-1138.png)';
+            this.move(1);
+          }
+        },
+        "move": function move(step) {
+          var _this2 = this;
 
-          _this4.query('.shuzi-box').classList.remove('tuozhuai');
+          if (this.data.gouziLeft > 738) this.data.gouziLeft = -110;
+          if (this.data.gouziLeft < -110) this.data.gouziLeft = 738;
+          var gouzi = this.query('.so-4');
+          gouzi.style.left = (this.data.gouziLeft += step) + 'px';
+          setTimeout(function() {
+            if (_this2.data.touching) _this2.move(step);
+          }, 0);
+        },
+        "showShuzi": function showShuzi() {
+          var _this3 = this;
 
-          _this4.query('.shuzi').style.display = 'none';
-        }, 100);
+          // this.query('.panel').style.display = 'block'
+          this.query('.gongxi').style.display = 'none';
+          this.query('.next').style.display = 'none';
+          owo.animate('bounceOut', this.query('.show'), 0, function(dom) {
+            dom.style.display = 'none';
+            _this3.query('.shuzi').style.display = 'block';
+            owo.animate('bounceIn', _this3.query('.shuzi'), 100);
+            setTimeout(function() {
+              _this3.query('.panel').style.display = 'block';
+
+              _this3.query('.shuzi-box').classList.add('tuozhuai');
+            }, 2000);
+          });
+        },
+        "jixuzhua": function jixuzhua() {
+          var _this4 = this;
+
+          this.query('.panel').style.display = 'none';
+          this.query('.gongxi').style.display = 'block';
+          this.query('.shuzi-box').style.display = 'none';
+          this.query('.show').style.display = 'block';
+          this.query('.next').style.display = 'block';
+
+          if (this.data.youxicishu >= 5) {
+            this.query('.shuzi').style.display = 'none';
+            var daan = ['180+', '3800+', '726.2', '36', '3000+'];
+            var code = 0;
+
+            for (var index = 0; index < daan.length; index++) {
+              var element = daan[index];
+
+              if (this.data.dati[index] == element) {
+                code++;
+              }
+            }
+
+            if (code >= 5) {
+              this.query('.fenxiang p').innerHTML = '<b>恭喜您</b><br>答对了全部题目<br>取得了游戏胜利';
+            } else {
+              this.query('.fenxiang p').innerHTML = "<b>\u5F88\u9057\u61BE</b><br>\u7B54\u9519\u4E86" + (5 - code) + "\u9053\u9898\u76EE<br>\u518D\u63A5\u518D\u5389";
+            }
+
+            this.query('.fenxiang').style.display = 'block';
+          } else {
+            setTimeout(function() {
+              _this4.query('.panel').classList.remove('can-next');
+
+              _this4.query('.shuzi-box').classList.remove('tuozhuai');
+
+              _this4.query('.shuzi').style.display = 'none';
+            }, 100);
+          }
+        },
+        "stopTouch": function stopTouch() {
+          this.data.touching = false;
+          this.query('.so-1').style.background = 'url(./static/resource/page2-1138-2.png)';
+          console.log(this.$event);
+        },
+        "zhuaqu": function zhuaqu() {
+          var _this5 = this;
+
+          var gouziLeft = this.data.gouziLeft;
+          this.query('.so-7').classList.add('zhuaqu');
+          setTimeout(function() {
+            _this5.query('.so-7').classList.remove('zhuaqu');
+          }, 2000);
+
+          if (gouziLeft > 202 && gouziLeft < 600 && !this.data.giftList.includes('hua')) {
+            this.data.giftList.push('hua');
+            this.data.activeName = '180+';
+            this.query('.show').src = './static/resource/hua.png';
+            this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“外滩风景图”';
+            this.query('.shuzi').src = './static/resource/180+.png';
+            setTimeout(function() {
+              _this5.query('.so-16').classList.add('zhuazhou');
+            }, 1000);
+            setTimeout(function() {
+              _this5.query('.shuzi-box').style.display = 'block';
+            }, 2000);
+            return;
+          }
+
+          if (gouziLeft > 239 && gouziLeft < 431 && !this.data.giftList.includes('xiongmao')) {
+            console.log('xiongmao');
+            this.data.activeName = '3800+';
+            this.query('.show').src = './static/resource/page2-1148.png';
+            this.data.giftList.push('xiongmao');
+            this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“进宝”';
+            this.query('.shuzi').src = './static/resource/3800+.png';
+            setTimeout(function() {
+              _this5.query('.so-13').classList.add('zhuazhou');
+            }, 1000);
+            setTimeout(function() {
+              _this5.query('.shuzi-box').style.display = 'block';
+            }, 2000);
+            return;
+          }
+
+          if (gouziLeft > 55 && gouziLeft < 337 && !this.data.giftList.includes('fangzi')) {
+            console.log('fangzi');
+            this.data.activeName = '3000+';
+            this.query('.show').src = './static/resource/page2-1149.png';
+            this.data.giftList.push('fangzi');
+            this.query('.shuzi').src = './static/resource/3000+.png';
+            this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“中国馆”';
+            setTimeout(function() {
+              _this5.query('.so-14').classList.add('zhuazhou');
+            }, 1000);
+            setTimeout(function() {
+              _this5.query('.shuzi-box').style.display = 'block';
+            }, 2000);
+            return;
+          }
+
+          if (gouziLeft > 564 && gouziLeft < 671 && !this.data.giftList.includes('siyecao')) {
+            console.log('siyecao');
+            this.data.activeName = '726.2';
+            this.query('.show').src = './static/resource/page2-1150.png';
+            this.data.giftList.push('siyecao');
+            this.query('.shuzi').src = './static/resource/726.2.png';
+            this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“幸运草”';
+            setTimeout(function() {
+              _this5.query('.so-15').classList.add('zhuazhou');
+            }, 1000);
+            setTimeout(function() {
+              _this5.query('.shuzi-box').style.display = 'block';
+            }, 2000);
+            return;
+          }
+
+          if (gouziLeft > 514 && gouziLeft < 671 && !this.data.giftList.includes('baozi')) {
+            console.log('baozi');
+            this.data.activeName = '36';
+            this.query('.show').src = './static/resource/page2-1145.png';
+            this.data.giftList.push('baozi');
+            this.query('.shuzi').src = './static/resource/36.png';
+            this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“生煎娃娃”';
+            setTimeout(function() {
+              _this5.query('.so-12').classList.add('zhuazhou');
+            }, 1000);
+            setTimeout(function() {
+              _this5.query('.shuzi-box').style.display = 'block';
+            }, 2000);
+            return;
+          }
+        },
+        "checkNumber": function checkNumber(num) {
+          num = parseInt(num);
+          this.data.dati[num] = this.data.activeName;
+          this.data.youxicishu++;
+          this.$target.query('img').src = "./static/resource/" + this.data.activeName + ".png";
+          this.$target.query('img').style.display = 'block';
+          this.$target.removeAttribute('o-animation'); // 判断是否最后了
+
+          if (this.data.youxicishu >= 5) {
+            this.query('.jixu').src = './static/resource/tijiao.png';
+          }
+
+          this.query('.panel').classList.add('can-next');
+        }
+      },
+      "page3": {},
+      "page4": {},
+      "music": {
+        "data": {
+          "music": null,
+          "musicIsPlay": false
+        },
+        "switchPlay": function switchPlay() {
+          this.data.musicIsPlay ? this.pause() : this.play();
+        },
+        "play": function play() {
+          console.log('播放音乐');
+
+          if (!this.data.musicIsPlay) {
+            this.data.musicIsPlay = true;
+            this.data.music = new Audio("https://cunchu.site/people/music/%E6%AC%A2%E4%B9%90%E7%9A%84%E7%94%9F%E6%B4%BB%20-%20Joyous%20life%202_cut.mp3");
+            this.data.music.volume = 0.2;
+            this.data.music.loop = true;
+            this.data.music.play();
+            var icon = document.getElementsByClassName('music-icon')[0];
+            icon.classList.add('active');
+          }
+        },
+        "pause": function pause() {
+          if (this.data.musicIsPlay) {
+            this.data.musicIsPlay = false;
+            this.data.music.pause();
+            var icon = document.getElementsByClassName('music-icon')[0];
+            icon.classList.remove('active');
+          }
+        }
       }
-    },
-    "stopTouch": function stopTouch() {
-      this.data.touching = false;
-      this.query('.so-1').src = './static/resource/page2-1138-2.png';
-      console.log(this.$event);
-    },
-    "zhuaqu": function zhuaqu() {
-      var _this5 = this;
+    };
+  </script>
 
-      var gouziLeft = this.data.gouziLeft;
-      this.query('.so-7').classList.add('zhuaqu');
-      setTimeout(function () {
-        _this5.query('.so-7').classList.remove('zhuaqu');
-      }, 2000);
+  <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
 
-      if (gouziLeft > 202 && gouziLeft < 600 && !this.data.giftList.includes('hua')) {
-        this.data.giftList.push('hua');
-        this.data.activeName = '180+';
-        this.query('.show').src = './static/resource/hua.png';
-        this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“外滩风景图”';
-        this.query('.shuzi').src = './static/resource/180+.png';
-        setTimeout(function () {
-          _this5.query('.so-16').classList.add('zhuazhou');
-        }, 1000);
-        setTimeout(function () {
-          _this5.query('.shuzi-box').style.display = 'block';
-        }, 2000);
-        return;
-      }
+</body>
 
-      if (gouziLeft > 239 && gouziLeft < 431 && !this.data.giftList.includes('xiongmao')) {
-        console.log('xiongmao');
-        this.data.activeName = '3800+';
-        this.query('.show').src = './static/resource/page2-1148.png';
-        this.data.giftList.push('xiongmao');
-        this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“进宝”';
-        this.query('.shuzi').src = './static/resource/3800+.png';
-        setTimeout(function () {
-          _this5.query('.so-13').classList.add('zhuazhou');
-        }, 1000);
-        setTimeout(function () {
-          _this5.query('.shuzi-box').style.display = 'block';
-        }, 2000);
-        return;
-      }
-
-      if (gouziLeft > 55 && gouziLeft < 337 && !this.data.giftList.includes('fangzi')) {
-        console.log('fangzi');
-        this.data.activeName = '3000+';
-        this.query('.show').src = './static/resource/page2-1149.png';
-        this.data.giftList.push('fangzi');
-        this.query('.shuzi').src = './static/resource/3000+.png';
-        this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“中国馆”';
-        setTimeout(function () {
-          _this5.query('.so-14').classList.add('zhuazhou');
-        }, 1000);
-        setTimeout(function () {
-          _this5.query('.shuzi-box').style.display = 'block';
-        }, 2000);
-        return;
-      }
-
-      if (gouziLeft > 564 && gouziLeft < 671 && !this.data.giftList.includes('siyecao')) {
-        console.log('siyecao');
-        this.data.activeName = '726.2';
-        this.query('.show').src = './static/resource/page2-1150.png';
-        this.data.giftList.push('siyecao');
-        this.query('.shuzi').src = './static/resource/726.2.png';
-        this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“幸运草”';
-        setTimeout(function () {
-          _this5.query('.so-15').classList.add('zhuazhou');
-        }, 1000);
-        setTimeout(function () {
-          _this5.query('.shuzi-box').style.display = 'block';
-        }, 2000);
-        return;
-      }
-
-      if (gouziLeft > 514 && gouziLeft < 671 && !this.data.giftList.includes('baozi')) {
-        console.log('baozi');
-        this.data.activeName = '36';
-        this.query('.show').src = './static/resource/page2-1145.png';
-        this.data.giftList.push('baozi');
-        this.query('.shuzi').src = './static/resource/36.png';
-        this.query('.gongxi p').innerHTML = '恭喜你！<br>获得“生煎娃娃”';
-        setTimeout(function () {
-          _this5.query('.so-12').classList.add('zhuazhou');
-        }, 1000);
-        setTimeout(function () {
-          _this5.query('.shuzi-box').style.display = 'block';
-        }, 2000);
-        return;
-      }
-    },
-    "checkNumber": function checkNumber(num) {
-      num = parseInt(num);
-      this.data.dati[num] = this.data.activeName;
-      this.data.youxicishu++;
-      this.$target.query('img').src = "./static/resource/" + this.data.activeName + ".png";
-      this.$target.query('img').style.display = 'block';
-      this.$target.removeAttribute('o-animation'); // 判断是否最后了
-
-      if (this.data.youxicishu >= 5) {
-        this.query('.jixu').src = './static/resource/tijiao.png';
-      }
-
-      this.query('.panel').classList.add('can-next');
-    }
-  },
-  "page3": {},
-  "page4": {},
-  "music": {
-    "data": {
-      "music": null,
-      "musicIsPlay": false
-    },
-    "switchPlay": function switchPlay() {
-      this.data.musicIsPlay ? this.pause() : this.play();
-    },
-    "play": function play() {
-      console.log('播放音乐');
-
-      if (!this.data.musicIsPlay) {
-        this.data.musicIsPlay = true;
-        this.data.music = new Audio("https://cunchu.site/people/music/%E6%AC%A2%E4%B9%90%E7%9A%84%E7%94%9F%E6%B4%BB%20-%20Joyous%20life%202_cut.mp3");
-        this.data.music.volume = 0.2;
-        this.data.music.loop = true;
-        this.data.music.play();
-        var icon = document.getElementsByClassName('music-icon')[0];
-        icon.classList.add('active');
-      }
-    },
-    "pause": function pause() {
-      if (this.data.musicIsPlay) {
-        this.data.musicIsPlay = false;
-        this.data.music.pause();
-        var icon = document.getElementsByClassName('music-icon')[0];
-        icon.classList.remove('active');
-      }
-    }
-  }
-};
-</script>
-
-    <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
-
-  </body>
 </html>

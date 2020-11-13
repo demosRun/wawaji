@@ -1,6 +1,6 @@
 <template lang="pug">
 .page2
-  img.so.so-1(src="@|page2-1138-2.png|" o-touchstart="startTouch" o-touchend="stopTouch")
+  .so.so-1(o-touchstart="startTouch" o-touchend="stopTouch")
   img.so.so-2(src="@|page2-1154.png|")
   img.so.so-3(src="@|page2-1139.png|")
   .so.so-4
@@ -59,11 +59,11 @@ module.exports = {
   startTouch: function () {
     const x = this.$event.targetTouches[0].clientX
     this.data.touching = true
-    if (x < 193) {
-      this.query('.so-1').src = '@|page2-1138-1.png|'
+    if (x > 193) {
+      this.query('.so-1').style.background = 'url(@|page2-1138-1.png|)'
       this.move(-1)
     } else {
-      this.query('.so-1').src = '@|page2-1138.png|'
+      this.query('.so-1').style.background = 'url(@|page2-1138.png|)'
       this.move(1)
     }
   },
@@ -127,7 +127,7 @@ module.exports = {
   },
   stopTouch: function () {
     this.data.touching = false
-    this.query('.so-1').src = '@|page2-1138-2.png|'
+    this.query('.so-1').style.background = 'url(@|page2-1138-2.png|)'
     console.log(this.$event)
   },
   zhuaqu: function () {
@@ -228,14 +228,20 @@ module.exports = {
 </script>
 <style lang="less">
 .so-1 {
-  left: 308px;
+  left: 291px;
   top: 1099px;
-  z-index: 2;
+  user-select: none;
+  z-index: 20;
+  width: 196px;
+  height: 185px;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-image: url('@|page2-1138-2.png|');
 }
 .so-2 {
   left: 0px;
   top: 0px;
-  z-index: -2;
+  z-index: 2;
 }
 .so-3 {
   left: 0px;
@@ -247,7 +253,7 @@ module.exports = {
   top: 211px;
   width: 116px;
   height: 398px;
-  z-index: -4;;
+  z-index: 1;
 }
 .so-5 {
   left: 39px;
@@ -277,7 +283,7 @@ module.exports = {
 .so-10 {
   left: 0px;
   top: 844px;
-  z-index: -10;
+  z-index: 0;
 }
 .so-11 {
   left: 43px;
@@ -312,7 +318,7 @@ module.exports = {
 }
 .so-16 {
   left: 171px;
-  top: 0px;
+  top: 242px;
   z-index: -16;
   transition: top 1s, opacity 1s;
 }
@@ -333,6 +339,7 @@ module.exports = {
   left: 15px;
   top: 206px;
   display: none;
+  z-index: 9;
   p {
     font-size: 36px;
     color: white;
